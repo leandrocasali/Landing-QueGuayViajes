@@ -1,27 +1,17 @@
 const cards = document.querySelectorAll('.card');
-const popup = document.getElementById('popup');
-const popupVideo = document.getElementById('popup-video');
-const closeBtn = document.getElementById('close');
+const popup = document.getElementById('videoPopup');
+const popupVideo = document.getElementById('popupVideo');
+const closePopup = document.getElementById('closePopup');
 
-// Abrir popup con el video
 cards.forEach(card => {
   card.addEventListener('click', () => {
-    const videoUrl = card.getAttribute('data-video') + "?autoplay=1";
-    popupVideo.src = videoUrl;
+    const videoUrl = card.getAttribute('data-video');
+    popupVideo.src = videoUrl + "?autoplay=1";
     popup.style.display = 'flex';
   });
 });
 
-// Cerrar popup
-closeBtn.addEventListener('click', () => {
+closePopup.addEventListener('click', () => {
   popup.style.display = 'none';
-  popupVideo.src = ""; // detener video
-});
-
-// Cerrar si se hace click fuera del contenido
-window.addEventListener('click', (e) => {
-  if (e.target === popup) {
-    popup.style.display = 'none';
-    popupVideo.src = "";
-  }
+  popupVideo.src = "";
 });

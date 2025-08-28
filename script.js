@@ -86,7 +86,3 @@ modal?.addEventListener('click', (e) => {
     iframe.src = '';
   }
 });
-
-
-
-

@@ -6,6 +6,7 @@
   <title>¡Qué Guay! Viajes - Inspírate en Venezuela</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
   <!-- HEADER -->
@@ -36,25 +37,84 @@
     </p>
   </section>
 
-  <!-- GRILLA DE VIDEOS -->
+    <!-- GRILLA DE VIDEOS -->
   <section class="video-grid">
-    <div class="card" data-video="https://player.vimeo.com/video/76979871">
-      <img src="https://picsum.photos/id/1015/400/300" alt="Video 1">
-      <p>Video 1</p>
+    <div class="card" data-video="https://player.vimeo.com/video/1102493116">
+      <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/07/canama_portada.jpg" alt="Video 1">
+      <p>Canaima</p>
     </div>
-    <div class="card" data-video="https://player.vimeo.com/video/22439234">
-      <img src="https://picsum.photos/id/1016/400/300" alt="Video 2">
-      <p>Video 2</p>
+    <div class="card" data-video="https://player.vimeo.com/video/864426457">
+      <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/07/playuela-ven.jpg" alt="Video 2">
+      <p>Cayo Playuela</p>
     </div>
-    <div class="card" data-video="https://player.vimeo.com/video/146022717">
-      <img src="https://picsum.photos/id/1019/400/300" alt="Video 3">
-      <p>Video 3</p>
+    <div class="card" data-video="https://player.vimeo.com/video/864421990">
+      <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/07/el-avila.jpg" alt="Video 3">
+      <p>El Teleférico de Caracas</p>
     </div>
-    <div class="card" data-video="https://player.vimeo.com/video/76979871">
-      <img src="https://picsum.photos/id/1020/400/300" alt="Video 4">
-      <p>Video 4</p>
+    <div class="card" data-video="https://player.vimeo.com/video/1103439794">
+      <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/07/losroques-1.jpg" alt="Video 4">
+      <p>Descubre la magia de Los Roques</p>
     </div>
   </section>
+
+
+  <section class="hero2">
+    <div class="overlay2"></div>
+    <div class="hero-text">
+      <h1>Por el <span>Mundo</span></h1>
+    </div>
+  </section>
+
+    <!-- Carrousel -->
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide video-card" data-video="https://player.vimeo.com/video/413720435">
+          <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/NinhBinh-1.jpg" alt="Video 1">
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="video-title">Ninh Binh</div>
+        </div>
+        <div class="swiper-slide video-card" data-video="https://player.vimeo.com/video/473886245">
+          <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/budagiagnte-1.jpg" alt="Video 2">
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="video-title">El buda gigante</div>
+        </div>
+        <div class="swiper-slide video-card" data-video="https://player.vimeo.com/video/359060886">
+          <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/Calo-des-Moro-1.jpg" alt="Video 3">
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="video-title">Caló des Moro</div>
+        </div>
+                <div class="swiper-slide video-card" data-video="https://player.vimeo.com/video/456789123">
+          <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/museo_portada-2.jpg" alt="Video 4">
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="video-title">Aventura en la selva</div>
+        </div>
+                <div class="swiper-slide video-card" data-video="https://player.vimeo.com/video/456789123">
+          <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/museo_portada-2.jpg" alt="Video 5">
+          <div class="overlay">
+            <span class="play-icon">▶</span>
+          </div>
+          <div class="video-title">Aventura en la selva</div>
+        </div>
+        <!-- Más slides -->
+      </div>
+      <!-- botones -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- paginación -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
   <!-- POPUP -->
   <div class="popup" id="popup">
@@ -63,6 +123,7 @@
       <iframe id="popup-video" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     </div>
   </div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script src="script.js"></script>
 </body>

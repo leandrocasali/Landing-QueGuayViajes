@@ -163,30 +163,39 @@
             <!-- Paso 1: Ingreso de teléfono -->
             <div id="step1">
                 <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
-                <p>Ingresa tu número de teléfono para suscribirte.</p>
-                <div class="phone-input-container">
-                    <span class="phone-prefix">+58</span>
-                    <input type="text" id="phone" placeholder="4123456789">
+                <div class="container-info">
+                  <p>Ingresa tu número de teléfono para suscribirte.</p>
+                  <div class="phone-input-container">
+                      <span class="phone-prefix">+58</span>
+                      <input type="text" id="phone" placeholder="Ingresa tu número móvil">
+                  </div>
+                  <div class="error" id="phone-error">Número de teléfono inválido. Debe tener 10 dígitos.</div>
+                  <button id="confirm-btn">Confirmar</button>
+                  <p class="precio">Bs. 20,24 c/imp diarios</p>
+                  <a href="https://ve.movistar.queguayviajes.com/terminos-y-condiciones" class="terms-link" target="_blank">Términos y condiciones</a>
                 </div>
-                <div class="error" id="phone-error">Número de teléfono inválido. Debe tener 10 dígitos.</div>
-                <button id="confirm-btn">Confirmar</button>
-                <a href="#" class="terms-link">Términos y condiciones</a>
             </div>
             
             <!-- Paso 2: Ingreso de PIN -->
             <div id="step2">
               <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
+              <div class="container-info"> 
                 <p>Ingresa el PIN de 4 dígitos.</p>
                 <input type="text" id="pin" placeholder="PIN (4 dígitos)">
                 <div class="error" id="pin-error">PIN inválido. Debe ser exactamente 4 dígitos numéricos.</div>
+                <p class="precio">Bs. 20,24 c/imp diarios</p>
                 <button id="continue-btn">Continuar</button>
+                <a href="https://ve.movistar.queguayviajes.com/terminos-y-condiciones" class="terms-link" target="_blank">Términos y condiciones</a>
+              </div> 
             </div>
             
             <!-- Paso 3: Mensaje de confirmación -->
             <div id="step3">
               <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
-                <p id="success-message"></p>
-                <button id="close-success-btn">Cerrar</button>
+               <div class="container-info"> 
+              <p id="success-message"></p>
+                <button id="close-success-btn">Ir al portal</button>
+               </div> 
             </div>
         </div>
     </div>

@@ -87,36 +87,78 @@ modal?.addEventListener('click', (e) => {
   }
 });
 
-
-// Scripts de Landing Pop Up 
-
-// Referencias
-const openPopup = document.getElementById('openPopup');
-const popupOverlay = document.getElementById('popupOverlay');
-const closePopup = document.getElementById('closePopup');
-const confirmarBtn = document.getElementById('confirmarBtn');
+// JavaScript para manejar el popup y validaciones
+const subscribeBtn = document.getElementById('subscribe-btn');
+const overlay = document.getElementById('overlay');
+const closePopup = document.getElementById('close-popup');
+const confirmBtn = document.getElementById('confirm-btn');
+const continueBtn = document.getElementById('continue-btn');
+const closeSuccessBtn = document.getElementById('close-success-btn');
 const step1 = document.getElementById('step1');
 const step2 = document.getElementById('step2');
+const step3 = document.getElementById('step3');
+const phoneInput = document.getElementById('phone');
+const pinInput = document.getElementById('pin');
+const phoneError = document.getElementById('phone-error');
+const pinError = document.getElementById('pin-error');
+const successMessage = document.getElementById('success-message');
 
-// Abrir popup
-openPopup.addEventListener('click', () => {
-  popupOverlay.style.display = 'flex';
-  popupOverlay.style.animation = 'fadeIn 0.3s ease forwards';
-});
-
-// Cerrar popup con fadeOut
-closePopup.addEventListener('click', () => {
-  popupOverlay.style.animation = 'fadeOut 0.3s ease forwards';
-  setTimeout(() => {
-    popupOverlay.style.display = 'none';
-    // Resetear pasos
+// Mostrar popup
+subscribeBtn.addEventListener('click', () => {
+    overlay.style.display = 'flex';
     step1.style.display = 'block';
     step2.style.display = 'none';
-  }, 300);
+    step3.style.display = 'none';
+    phoneInput.value = '';
+    pinInput.value = '';
+    phoneError.style.display = 'none';
+    pinError.style.display = 'none';
 });
 
-// Confirmar teléfono → mostrar PIN
-confirmarBtn.addEventListener('click', () => {
-  step1.style.display = 'none';
-  step2.style.display = 'block';
+// Cerrar popup con la X
+closePopup.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
+
+// Cerrar popup al hacer clic en el overlay
+overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = 'none';
+    }
+});
+
+// Validar y pasar a paso 2
+confirmBtn.addEventListener('click', () => {
+    const phone = phoneInput.value.trim();
+    const phoneRegex = /^\d{10}$/; // Exactamente 10 dígitos
+
+    if (!phoneRegex.test(phone)) {
+        phoneError.style.display = 'block';
+        return;
+    }
+
+    phoneError.style.display = 'none';
+    step1.style.display = 'none';
+    step2.style.display = 'block';
+});
+
+// Validar PIN y pasar a paso 3
+continueBtn.addEventListener('click', () => {
+    const pin = pinInput.value.trim();
+    const pinRegex = /^\d{4}$/; // Exactamente 4 dígitos
+
+    if (!pinRegex.test(pin)) {
+        pinError.style.display = 'block';
+        return;
+    }
+
+    pinError.style.display = 'none';
+    step2.style.display = 'none';
+    step3.style.display = 'block';
+    successMessage.textContent = `Suscripción completada con éxito! Teléfono: +58${phoneInput.value}`;
+});
+
+// Cerrar popup desde el botón de éxito
+closeSuccessBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
 });

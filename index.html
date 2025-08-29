@@ -150,30 +150,46 @@
     </div>
   </div>
 
-  <!-- Botón principal -->
-  <button class="btn-suscribir" id="openPopup">Suscribirse</button>
-
-  <!-- Popup -->
-  <div class="overlay-bg" id="popupOverlay">
-    <div class="popup2">
-      <span class="close" id="closePopup">&times;</span>
-      <img src="https://via.placeholder.com/100" alt="Promo">
-      <p>Ingresa tu número de teléfono para suscribirte</p>
-
-      <!-- Paso 1: Teléfono -->
-      <div id="step1">
-        <input type="tel" id="telefono" placeholder="Tu teléfono">
-        <button id="confirmarBtn">Confirmar</button>
-        <a href="#">Términos y condiciones</a>
-      </div>
-
-      <!-- Paso 2: PIN -->
-      <div id="step2" style="display:none;">
-        <input type="text" id="pin" placeholder="Ingresa tu PIN">
-        <button id="continuarBtn">Continuar</button>
-      </div>
+<!-- Botón de Suscribirse -->
+   <div class="subscribe">
+    <button id="subscribe-btn">Suscribirse</button>
     </div>
-  </div>
+
+    <!-- Overlay y Popup -->
+    <div class="modal-overlay" id="overlay">
+        <div class="modal-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            
+            <!-- Paso 1: Ingreso de teléfono -->
+            <div id="step1">
+                <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
+                <p>Ingresa tu número de teléfono para suscribirte.</p>
+                <div class="phone-input-container">
+                    <span class="phone-prefix">+58</span>
+                    <input type="text" id="phone" placeholder="4123456789">
+                </div>
+                <div class="error" id="phone-error">Número de teléfono inválido. Debe tener 10 dígitos.</div>
+                <button id="confirm-btn">Confirmar</button>
+                <a href="#" class="terms-link">Términos y condiciones</a>
+            </div>
+            
+            <!-- Paso 2: Ingreso de PIN -->
+            <div id="step2">
+              <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
+                <p>Ingresa el PIN de 4 dígitos.</p>
+                <input type="text" id="pin" placeholder="PIN (4 dígitos)">
+                <div class="error" id="pin-error">PIN inválido. Debe ser exactamente 4 dígitos numéricos.</div>
+                <button id="continue-btn">Continuar</button>
+            </div>
+            
+            <!-- Paso 3: Mensaje de confirmación -->
+            <div id="step3">
+              <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/landing-qgv.jpg" alt="Imagen de suscripción">
+                <p id="success-message"></p>
+                <button id="close-success-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
   <footer>
         <div style="text-align:center;">

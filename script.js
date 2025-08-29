@@ -86,3 +86,37 @@ modal?.addEventListener('click', (e) => {
     iframe.src = '';
   }
 });
+
+
+// Scripts de Landing Pop Up 
+
+// Referencias
+const openPopup = document.getElementById('openPopup');
+const popupOverlay = document.getElementById('popupOverlay');
+const closePopup = document.getElementById('closePopup');
+const confirmarBtn = document.getElementById('confirmarBtn');
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+
+// Abrir popup
+openPopup.addEventListener('click', () => {
+  popupOverlay.style.display = 'flex';
+  popupOverlay.style.animation = 'fadeIn 0.3s ease forwards';
+});
+
+// Cerrar popup con fadeOut
+closePopup.addEventListener('click', () => {
+  popupOverlay.style.animation = 'fadeOut 0.3s ease forwards';
+  setTimeout(() => {
+    popupOverlay.style.display = 'none';
+    // Resetear pasos
+    step1.style.display = 'block';
+    step2.style.display = 'none';
+  }, 300);
+});
+
+// Confirmar teléfono → mostrar PIN
+confirmarBtn.addEventListener('click', () => {
+  step1.style.display = 'none';
+  step2.style.display = 'block';
+});

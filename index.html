@@ -150,6 +150,31 @@
     </div>
   </div>
 
+  <!-- Botón principal -->
+  <button class="btn-suscribir" id="openPopup">Suscribirse</button>
+
+  <!-- Popup -->
+  <div class="overlay-bg" id="popupOverlay">
+    <div class="popup2">
+      <span class="close" id="closePopup">&times;</span>
+      <img src="https://via.placeholder.com/100" alt="Promo">
+      <p>Ingresa tu número de teléfono para suscribirte</p>
+
+      <!-- Paso 1: Teléfono -->
+      <div id="step1">
+        <input type="tel" id="telefono" placeholder="Tu teléfono">
+        <button id="confirmarBtn">Confirmar</button>
+        <a href="#">Términos y condiciones</a>
+      </div>
+
+      <!-- Paso 2: PIN -->
+      <div id="step2" style="display:none;">
+        <input type="text" id="pin" placeholder="Ingresa tu PIN">
+        <button id="continuarBtn">Continuar</button>
+      </div>
+    </div>
+  </div>
+
   <footer>
         <div style="text-align:center;">
       <img src="https://s3-sa-east-1.amazonaws.com/assets.pe.entel.mujeres.fit/wp-content/uploads/2025/08/logo-landing.png" alt="Logo" class="logo">
